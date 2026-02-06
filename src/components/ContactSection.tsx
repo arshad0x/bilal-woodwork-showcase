@@ -1,9 +1,15 @@
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ContactSection = () => {
   const handleCallNow = () => {
     window.location.href = 'tel:8368194298';
+  };
+
+  const handleWhatsApp = () => {
+    const phoneNumber = '918368194298';
+    const message = encodeURIComponent('Hi! I am interested in your woodwork services. Please share more details.');
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
   return (
@@ -38,6 +44,22 @@ const ContactSection = () => {
                 </div>
               </div>
 
+              {/* WhatsApp */}
+              <div className="flex items-start gap-4 p-4 bg-background rounded-xl shadow-card">
+                <div className="w-12 h-12 bg-[#25D366] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
+                  <button 
+                    onClick={handleWhatsApp}
+                    className="text-[#25D366] text-lg font-medium hover:underline"
+                  >
+                    Message Us Directly
+                  </button>
+                </div>
+              </div>
+
               {/* Address */}
               <div className="flex items-start gap-4 p-4 bg-background rounded-xl shadow-card">
                 <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
@@ -67,11 +89,21 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <Button variant="callNow" size="lg" onClick={handleCallNow} className="w-full sm:w-auto">
-              <Phone className="w-5 h-5" />
-              Call Now: 8368194298
-            </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="callNow" size="lg" onClick={handleCallNow} className="w-full sm:w-auto">
+                <Phone className="w-5 h-5" />
+                Call Now
+              </Button>
+              <Button 
+                size="lg" 
+                onClick={handleWhatsApp} 
+                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold"
+              >
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Us
+              </Button>
+            </div>
           </div>
 
           {/* Right - Map/Visual */}
