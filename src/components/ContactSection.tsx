@@ -106,30 +106,23 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right - Map/Visual */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl p-8 h-full min-h-[400px] flex flex-col justify-center items-center text-center shadow-elegant">
-              {/* Decorative frame */}
-              <div className="absolute inset-4 border-2 border-primary/30 rounded-xl pointer-events-none" />
-              
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-                  <MapPin className="w-10 h-10 text-primary-foreground" />
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-secondary-foreground mb-4">
-                  Visit Our Workshop
-                </h3>
-                <p className="text-secondary-foreground/80 mb-6 max-w-sm">
-                  Experience our craftsmanship firsthand. Visit our workshop in Bareilly to see our work and discuss your project.
-                </p>
-                <div className="inline-flex items-center gap-2 text-primary font-medium">
-                  <span>Pilibhit Road, Khajuriya Ghat</span>
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute top-8 right-8 w-16 h-16 border-2 border-primary/20 rounded-full" />
-              <div className="absolute bottom-8 left-8 w-12 h-12 bg-primary/10 rounded-full" />
+          {/* Right - Google Map */}
+          <div className="relative rounded-2xl overflow-hidden shadow-elegant min-h-[400px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.5!2d79.42!3d28.36!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zBilal+Woodwork!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Bilal+Woodwork+Pilibhit+Road+Khajuriya+Ghat+Bareilly"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '400px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Bilal Woodwork Location"
+              className="absolute inset-0 w-full h-full"
+            />
+            {/* Map overlay label */}
+            <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-card">
+              <p className="font-semibold text-foreground text-sm">📍 Bilal Woodwork</p>
+              <p className="text-muted-foreground text-xs">Pilibhit Road, Khajuriya Ghat, Bareilly</p>
             </div>
           </div>
         </div>
