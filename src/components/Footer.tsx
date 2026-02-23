@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react';
+import { Phone, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,6 +44,15 @@ const Footer = () => {
               >
                 <Phone className="w-4 h-4" />
                 8368194298
+              </a>
+              <a 
+                href="https://www.instagram.com/bilal_woodwork24?igsh=NTUwemZ5MTAzcTdi" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+                @bilal_woodwork24
               </a>
               <p>Pilibhit Road, Khajuriya Ghat, Bareilly</p>
             </div>
